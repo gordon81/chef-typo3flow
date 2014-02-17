@@ -37,6 +37,6 @@ mysql_database_user node['typo3flow']['db']['user'] do
   connection mysql_connection_info
   password node['typo3flow']['db']['password']
   database_name node['typo3flow']['db']['database']
-  privileges [:select,:update,:insert,:create,:alter,:drop,:delete]
+  privileges [:all]
   action :grant
 end

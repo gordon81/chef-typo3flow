@@ -24,6 +24,11 @@ cookbook_file "/etc/php5/conf.d/php_custom.ini" do
 	mode 0655
 end
 
+cookbook_file "/etc/php5/fpm/pool.d/www.conf" do
+	source "www.conf"
+	mode 0644
+end
+
 template "upstream_php-fpm.conf" do
   path "#{node['nginx']['dir']}/conf.d/fpm.conf"
   source "upstream_php-fpm.conf.erb"
